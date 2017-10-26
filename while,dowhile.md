@@ -75,7 +75,7 @@ while(true){
 console.log("참 잘했어요");
 ```
 
-> while 연습
+> while 연습1
 
 ```javascript
 //1부터 n까지 더한 값을 return
@@ -91,6 +91,24 @@ function sumFrom1ToN(n){
 
 var result = sumFrom1ToN(3);
 console.log(result);
+```
+
+> while 연습2
+
+```javascript
+var i = 0;
+while(i < 5){
+	i++
+	console.log(i); //5
+}
+console.log("firsti =", i); //5 
+
+var i = 0;
+while(i < 5){
+	console.log(i); //4
+	i++
+}
+console.log("lasti =", i); //5 근데 이렇게 잘안쓴다 i는 반복문에서만 사용
 ```
 
 
