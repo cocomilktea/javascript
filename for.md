@@ -32,6 +32,40 @@ for문이 끝나는 (닫히는 중괄호)부분으로 간 다음에 조건식을
 
 
 
+> for문 연습
+
+ ```javascript
+console.log("start");
+for(var i = 0; i < 5; i++){ //let i (권장)
+	console.log("1 %d", i);
+	if(i == 3){
+		break;
+	}
+	console.log("2 %d", i);	
+}
+console.log("outside",i); //3 
+//자바스크립트는 특이하게 for문이 끝나도 i가 사라지지않는다 값이나옴.
+//근데 변수 i를 var가 아닌 let으로 하면 for문밖에서 i를 쓸수없기때문에 err가 난다 
+//가능한 let사용 권장
+console.log("end");
+
+
+
+//coninue 구문을 만나면 루프의 증감식으로 돌아가서 다시 조건식검사.
+console.log("start");
+for(var i = 0; i < 5; i++){ 
+	console.log("1 %d", i);
+	if(i >= 3){
+		continue;
+	}
+	console.log("2 %d", i);	
+}
+
+console.log("end");
+ ```
+
+
+
 ### for in 문
 
 > 객체에 각 속성에 대해 접근
@@ -133,4 +167,37 @@ for (var key in obj ){
 }
 console.log(sum);
 ```
+
+
+
+> for in문 객체 실습
+
+ ```javascript
+var h = {name : "해나",
+		status : "잠못잠",
+		money : 999999,
+		age : 23,
+		pc : 5,
+		pet : ['에비츄', '스누피', '가필드'],
+		work : function(money){
+			this.money += money;
+		}	
+	};
+
+
+//1. 객체의 키와 값을 출력
+for(var x in h){
+	console.log(x + " = " + h[x]);
+}	
+
+//2. 객체 중에 숫자 객체의 합을 출력해보자
+var result = 0;
+for(var n in h){
+	if(typeof(h[n]) == "number"){
+		console.log("debug", h[n], result);
+		result += h[n];
+	};
+}
+console.log(result);
+ ```
 
